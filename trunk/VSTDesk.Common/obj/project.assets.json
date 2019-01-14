@@ -7338,11 +7338,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\DM Projects\\Neela\\trunk\\VSTDesk.Common\\VSTDesk.Common.csproj",
+      "projectUniqueName": "E:\\GIT\\Neela\\Neela\\trunk\\VSTDesk.Common\\VSTDesk.Common.csproj",
       "projectName": "VSTDesk.Common",
-      "projectPath": "E:\\DM Projects\\Neela\\trunk\\VSTDesk.Common\\VSTDesk.Common.csproj",
+      "projectPath": "E:\\GIT\\Neela\\Neela\\trunk\\VSTDesk.Common\\VSTDesk.Common.csproj",
       "packagesPath": "C:\\Users\\Daffolap-634\\.nuget\\packages\\",
-      "outputPath": "E:\\DM Projects\\Neela\\trunk\\VSTDesk.Common\\obj\\",
+      "outputPath": "E:\\GIT\\Neela\\Neela\\trunk\\VSTDesk.Common\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -7361,8 +7361,8 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "E:\\DM Projects\\Neela\\trunk\\VSTDesk.DB.Entities\\VSTDesk.DB.Entities.csproj": {
-              "projectPath": "E:\\DM Projects\\Neela\\trunk\\VSTDesk.DB.Entities\\VSTDesk.DB.Entities.csproj"
+            "E:\\GIT\\Neela\\Neela\\trunk\\VSTDesk.DB.Entities\\VSTDesk.DB.Entities.csproj": {
+              "projectPath": "E:\\GIT\\Neela\\Neela\\trunk\\VSTDesk.DB.Entities\\VSTDesk.DB.Entities.csproj"
             }
           }
         }

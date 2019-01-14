@@ -6589,11 +6589,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\DM Projects\\Neela\\trunk\\VSTDesk.Api\\VSTDesk.Api.csproj",
+      "projectUniqueName": "E:\\GIT\\Neela\\Neela\\trunk\\VSTDesk.Api\\VSTDesk.Api.csproj",
       "projectName": "VSTDesk.Api",
-      "projectPath": "E:\\DM Projects\\Neela\\trunk\\VSTDesk.Api\\VSTDesk.Api.csproj",
+      "projectPath": "E:\\GIT\\Neela\\Neela\\trunk\\VSTDesk.Api\\VSTDesk.Api.csproj",
       "packagesPath": "C:\\Users\\Daffolap-634\\.nuget\\packages\\",
-      "outputPath": "E:\\DM Projects\\Neela\\trunk\\VSTDesk.Api\\obj\\",
+      "outputPath": "E:\\GIT\\Neela\\Neela\\trunk\\VSTDesk.Api\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -6612,8 +6612,8 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "E:\\DM Projects\\Neela\\trunk\\VSTDesk.Data\\VSTDesk.Data.csproj": {
-              "projectPath": "E:\\DM Projects\\Neela\\trunk\\VSTDesk.Data\\VSTDesk.Data.csproj"
+            "E:\\GIT\\Neela\\Neela\\trunk\\VSTDesk.Data\\VSTDesk.Data.csproj": {
+              "projectPath": "E:\\GIT\\Neela\\Neela\\trunk\\VSTDesk.Data\\VSTDesk.Data.csproj"
             }
           }
         }

@@ -7378,11 +7378,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\DM Projects\\Neela\\trunk\\VSTDesk.Data\\VSTDesk.Data.csproj",
+      "projectUniqueName": "E:\\GIT\\Neela\\Neela\\trunk\\VSTDesk.Data\\VSTDesk.Data.csproj",
       "projectName": "VSTDesk.Data",
-      "projectPath": "E:\\DM Projects\\Neela\\trunk\\VSTDesk.Data\\VSTDesk.Data.csproj",
+      "projectPath": "E:\\GIT\\Neela\\Neela\\trunk\\VSTDesk.Data\\VSTDesk.Data.csproj",
       "packagesPath": "C:\\Users\\Daffolap-634\\.nuget\\packages\\",
-      "outputPath": "E:\\DM Projects\\Neela\\trunk\\VSTDesk.Data\\obj\\",
+      "outputPath": "E:\\GIT\\Neela\\Neela\\trunk\\VSTDesk.Data\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -7401,14 +7401,14 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "E:\\DM Projects\\Neela\\trunk\\VSTDesk.Common\\VSTDesk.Common.csproj": {
-              "projectPath": "E:\\DM Projects\\Neela\\trunk\\VSTDesk.Common\\VSTDesk.Common.csproj"
+            "E:\\GIT\\Neela\\Neela\\trunk\\VSTDesk.Common\\VSTDesk.Common.csproj": {
+              "projectPath": "E:\\GIT\\Neela\\Neela\\trunk\\VSTDesk.Common\\VSTDesk.Common.csproj"
             },
-            "E:\\DM Projects\\Neela\\trunk\\VSTDesk.DB.Entities\\VSTDesk.DB.Entities.csproj": {
-              "projectPath": "E:\\DM Projects\\Neela\\trunk\\VSTDesk.DB.Entities\\VSTDesk.DB.Entities.csproj"
+            "E:\\GIT\\Neela\\Neela\\trunk\\VSTDesk.DB.Entities\\VSTDesk.DB.Entities.csproj": {
+              "projectPath": "E:\\GIT\\Neela\\Neela\\trunk\\VSTDesk.DB.Entities\\VSTDesk.DB.Entities.csproj"
             },
-            "E:\\DM Projects\\Neela\\trunk\\VSTDesk.Models\\VSTDesk.Models.csproj": {
-              "projectPath": "E:\\DM Projects\\Neela\\trunk\\VSTDesk.Models\\VSTDesk.Models.csproj"
+            "E:\\GIT\\Neela\\Neela\\trunk\\VSTDesk.Models\\VSTDesk.Models.csproj": {
+              "projectPath": "E:\\GIT\\Neela\\Neela\\trunk\\VSTDesk.Models\\VSTDesk.Models.csproj"
             }
           }
         }

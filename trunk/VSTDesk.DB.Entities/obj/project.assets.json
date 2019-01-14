@@ -4334,11 +4334,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\DM Projects\\Neela\\trunk\\VSTDesk.DB.Entities\\VSTDesk.DB.Entities.csproj",
+      "projectUniqueName": "E:\\GIT\\Neela\\Neela\\trunk\\VSTDesk.DB.Entities\\VSTDesk.DB.Entities.csproj",
       "projectName": "VSTDesk.DB.Entities",
-      "projectPath": "E:\\DM Projects\\Neela\\trunk\\VSTDesk.DB.Entities\\VSTDesk.DB.Entities.csproj",
+      "projectPath": "E:\\GIT\\Neela\\Neela\\trunk\\VSTDesk.DB.Entities\\VSTDesk.DB.Entities.csproj",
       "packagesPath": "C:\\Users\\Daffolap-634\\.nuget\\packages\\",
-      "outputPath": "E:\\DM Projects\\Neela\\trunk\\VSTDesk.DB.Entities\\obj\\",
+      "outputPath": "E:\\GIT\\Neela\\Neela\\trunk\\VSTDesk.DB.Entities\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
