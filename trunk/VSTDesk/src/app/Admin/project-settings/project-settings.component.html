@@ -1,0 +1,235 @@
+﻿<div class="projects-list-container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <select class="custom-select custom-select-secondary" id="inlineFormCustomSelect" (change)="onSelect($event.target.value)">
+                    <option value="-1">{{'AdminModule.SelectProject' | translate}}</option>
+                    <option *ngFor="let project of projectList" value={{project.Id}}>{{project.Name}}</option>
+                </select>
+                <small class="text-muted">{{'AdminModule.Label.ProjectsList' | translate}}</small>
+            </div>
+        </div>
+    </div>
+</div>
+
+<form [formGroup]="adminSettingForm" *ngIf="isDisplaySettings" (submit)="saveProjectSetting()">
+    <div class="card mb-4 has-shadow">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <div formArrayName="WorkItemsList" class="show-work-item mb-4">
+                        <h5 class="card-title">{{'AdminModule.Label.ItemsToShow' | translate}}</h5>
+                        <div *ngFor="let workItem of WorkItemList.controls; let i=index" [formGroupName]="i" class="form-check form-check-custom pl-0">
+                            <label>
+
+                                <input formControlName="IsSelected" class="form-check-input" type="checkbox" value="">
+                                {{workItem.value.Name | translate}}
+                                <span class="squire-check-mark"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="vsts-Fields mb-4">
+                        <h5 class="card-title">{{'AdminModule.Label.FieldUpdate' | translate}}</h5>
+                        <div formGroupName="EditableFields">
+                            <div class="form-check form-check-custom pl-0">
+                                <label>
+                                    {{'AdminModule.Label.Title' | translate}}
+                                    <input formControlName="Title" class="form-check-input" type="checkbox" value="">
+                                    <span class="squire-check-mark"></span>
+                                </label>
+                            </div>
+                            <div class="form-check form-check-custom pl-0">
+                                <label>
+                                    {{'AdminModule.Label.Details' | translate}}
+                                    <input formControlName="Details" class="form-check-input" type="checkbox" value="">
+                                    <span class="squire-check-mark"></span>
+                                </label>
+                            </div>
+                            <div class="form-check form-check-custom pl-0">
+                                <label>
+                                    {{'AdminModule.Label.CustomerFeedback' | translate}}
+                                    <input formControlName="CustomerFeedback" class="form-check-input" type="checkbox" value="">
+                                    <span class="squire-check-mark"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                </div>
+                <div class="col-md-6">
+                    <div class="custom-filter mb-4">
+                        <h5 class="card-title">{{'AdminModule.Label.CustomFilters' | translate}}</h5>
+                        <div class="form-check form-check-custom pl-0">
+                            <label>
+                                {{'AdminModule.Label.ShowVSTDesk' | translate}}
+                                <input formControlName="VSTDeskActive" class="form-check-input" type="checkbox" value="">
+                                <span class="squire-check-mark"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="work-item mb-4">
+                        <h5 class="card-title">{{'AdminModule.Label.Layout' | translate}}</h5>
+                        <div formGroupName="Layout">
+                            <div class="form-check radio-checkbox-custom">
+                                <label>
+                                    {{'AdminModule.Label.Hierarchical' | translate}}
+                                    <input type="radio" class="form-check-input" name="optionsRadios" (click)="setradio(0)" id="optionsRadios1" [checked]="adminSettingForm?.controls['Layout'].controls['Hierarchical']?.value">
+                                    <span class="circle-check-mark"></span>
+                                </label>
+                            </div>
+                            <div class="form-check radio-checkbox-custom">
+                                <label>
+                                    {{'AdminModule.Label.Flat' | translate}}
+                                    <input type="radio" class="form-check-input" name="optionsRadios" (click)="setradio(1)" id="optionsRadios2" [checked]="adminSettingForm?.controls['Layout'].controls['Flat']?.value">
+                                    <span class="circle-check-mark"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="work-item mb-4">
+                        <h5 class="card-title">{{'AdminModule.Label.GridVisibleFields' | translate}}</h5>
+                        <div formGroupName="GridVisibleFields">
+                            <div class="form-check form-check-custom pl-0">
+                                <label>
+                                    {{'AdminModule.Label.WorkItemId' | translate}}
+                                    <input formControlName="WorkItemId" class="form-check-input" type="checkbox" value="">
+                                    <span class="squire-check-mark"></span>
+                                </label>
+                            </div>
+                            <div class="form-check form-check-custom pl-0">
+                                <label>
+                                    {{'AdminModule.Label.WorkItemType' | translate}}
+                                    <input formControlName="WorkItemType" class="form-check-input" type="checkbox" value="">
+                                    <span class="squire-check-mark"></span>
+                                </label>
+                            </div>
+                            <div class="form-check form-check-custom pl-0">
+                                <label>
+                                    {{'AdminModule.Label.Title' | translate}}
+                                    <input formControlName="Title" class="form-check-input" type="checkbox" value="">
+                                    <span class="squire-check-mark"></span>
+                                </label>
+                            </div>
+                            <div class="form-check form-check-custom pl-0">
+                                <label>
+                                    {{'AdminModule.Label.State' | translate}}
+                                    <input formControlName="State" class="form-check-input" type="checkbox" value="">
+                                    <span class="squire-check-mark"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <!--<div class="status mb-4">
+        <h5 class="card-title">{{'AdminModule.Label.Status' | translate}}</h5>
+        <div formArrayName="WorkItemsState">
+
+            <div *ngFor="let workItemState of WorkItemStateList.controls; let i=index" [formGroupName]="i" class="form-check form-check-custom pl-0">
+                <label>
+                    {{ workItemState.value.Name  | translate}}
+                    <input formControlName="IsSelected" class="form-check-input" type="checkbox" value="">
+                    <span class="squire-check-mark"></span>
+                </label>
+            </div>
+        </div>
+    </div>-->
+                </div>
+            </div>
+
+            <div class="new-task mb-4">
+                <h5 class="card-title">{{'AdminModule.Label.DefaultValues' | translate}}</h5>
+                <div class="row">
+                    <div class="col-md-4">
+                        <label>{{'AdminModule.Label.State' | translate}}</label>
+                        <select class="custom-select custom-select-secondary" formControlName="CreatedItemStatus">
+                            <option value=""> -- {{'AdminModule.Select' | translate}} {{'AdminModule.State' | translate}} --</option>
+                            <option *ngFor="let itemstatus of createdItemsStatus" [value]="itemstatus.Name">{{ itemstatus.Name}}</option>
+                        </select>
+                        <div class="form-text text-danger" *ngIf="adminSettingForm.get('CreatedItemStatus').hasError('option')">
+                            {{'AdminModule.Validations.SelectState' | translate}}
+                        </div>
+
+                    </div>
+                    <div class="col-md-4">
+                        <label>{{'AdminModule.Label.WorkItemType' | translate}}</label>
+                        <select class="custom-select custom-select-secondary" formControlName="CreatedItemType">
+                            <option value=""> -- {{'AdminModule.Select' | translate}} {{'AdminModule.WorkItemType' | translate}} --</option>
+                            <option *ngFor="let workItem of WorkItemList.controls" [value]="workItem.value.Name"> {{workItem.value.Name | translate}}</option>
+                        </select>
+                        <div class="form-text text-danger" *ngIf="adminSettingForm.get('CreatedItemType').hasError('option')">
+                            {{'AdminModule.Validations.SelectCreatedWorkItemType' | translate}}
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <label>{{'AdminModule.Label.AssignedTo' | translate}}</label>
+                        <select class="custom-select custom-select-secondary" formControlName="DefaultAssignment">
+                            <option value=""> -- {{'AdminModule.Select' | translate}} {{'AdminModule.Assignment' | translate}} --</option>
+                            <option *ngFor="let member of MemberList" [value]="member"> {{member | translate}}</option>
+                        </select>
+                        <div class="form-text text-danger" *ngIf="adminSettingForm.get('DefaultAssignment').hasError('option')">
+                            {{'AdminModule.Validations.SelectAssignment' | translate}}
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+
+            <div>
+                <div class="row">
+                    <div class="col-md-6"><h5 class="card-title">{{'AdminModule.Label.CustomStatus' | translate}}</h5></div>
+                    <div class="col-md-6"><h5 class="card-title">{{'AdminModule.Label.VSTDeskCustomStatus' | translate}}</h5></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-md-1">
+                                <div formArrayName="WorkItemsState">
+                                    <div *ngFor="let workItemState of WorkItemStateList.controls; let i=index" [formGroupName]="i" class="form-group form-control form-check form-check-custom pl-0" style="border:0px;background-color:transparent">
+                                        <label>
+                                            <input formControlName="IsSelected" class="form-check-input" type="checkbox" value="">
+                                            <span class="squire-check-mark" style="top:7px;left:1px"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-11">
+                                <div class="custom-status" formArrayName="CustomStatus">
+                                    <div [formGroupName]="i" *ngFor="let customStatus of adminSettingForm.controls['CustomStatus'].controls; let i=index">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" formControlName="StatusName" disabled />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-6">
+                        <div class="custom-status" formArrayName="CustomStatus">
+                            <div [formGroupName]="i" *ngFor="let customStatus of adminSettingForm.controls['CustomStatus'].controls; let i=index">
+                                <!--<div class="col-md-6">
+
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" formControlName="StatusName" disabled />
+                                    </div>
+                                </div>-->
+
+                                <div class="form-group">
+                                    <input formControlName="DisplayName" class="form-control white-bg" type="text" id="example-text-input">
+                                </div>
+                                <div class="form-text text-danger" *ngIf="adminSettingForm.controls.CustomStatus.controls[i].get('DisplayName').touched && adminSettingForm.controls.CustomStatus.controls[i].get('DisplayName').hasError('required')">
+                                    {{'AdminModule.Validations.Required' | translate}}
+                                </div>
+                                <div class="form-text text-danger" *ngIf="!adminSettingForm.controls.CustomStatus.controls[i].get('DisplayName').hasError('required') && adminSettingForm.controls.CustomStatus.controls[i].get('DisplayName').hasError('textFormat')">{{'AdminModule.Validations.OnlyCharcters' | translate}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

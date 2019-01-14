@@ -1,0 +1,12 @@
+﻿<html>
+<div>
+<body style="color:grey; font-size:16px;">
+<font face="Helvetica, Arial, sans-serif">
+
+Hi {name}  You are invited on Neela.
+<br/>
+Please use following link to access<a href="{message}" target="_blank"> Neela</a>
+
+</div>
+</body>
+</html>

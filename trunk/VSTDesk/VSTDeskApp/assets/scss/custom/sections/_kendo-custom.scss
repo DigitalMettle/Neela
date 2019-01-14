@@ -1,0 +1,9 @@
+﻿@import '../custom-variables';
+
+.k-state-selected, .k-pager-wrap .k-state-selected:hover {
+    background-color: $primary;
+}
+.k-pager-numbers .k-link, .k-pager-numbers .k-link:link {
+    color: $primary;
+}
+ 

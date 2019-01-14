@@ -1,0 +1,18 @@
+﻿@import '../custom-variables';
+
+.table {
+    &.has-status-v-strip {
+        tr {
+            td:first-child, th:first-child {
+                border-left: .45rem solid transparent;
+            }
+            &.selected {
+                td {
+                    &:first-child {
+                        border-color: $primary;
+                    }
+                }
+            }
+        }
+    }
+}

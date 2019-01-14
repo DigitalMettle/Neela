@@ -1,0 +1,67 @@
+﻿<!--<h1 class="h4">My Profile</h1>-->
+<form [formGroup]="formData">
+    <div class="card my-profile has-shadow">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-xl-4 col-left">
+                    <div class="form-group">
+                        <input type="text" class="form-control" formControlName="Email" disabled>
+                        <small class="text-muted">{{'AdminModule.Label.Email' | translate}}</small>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="{{'CustomerModule.Placeholder.EnterFirstName' | translate}}" formControlName="FirstName">
+                        <small class="text-muted">{{'AdminModule.Label.FirstName' | translate}}</small>
+                        <div class="form-text text-danger padding-h" *ngIf="formData.controls['FirstName'].touched && formData.controls['FirstName'].hasError('required')">
+                            <small>{{'CustomerModule.Validations.FirstNameRequired' | translate}}</small>
+                        </div>
+                        <div class="form-text text-danger w-100" *ngIf="formData.get('FirstName').touched && !formData.get('FirstName').hasError('required') && formData.get('FirstName').hasError('blankValidation')">{{'CoreModule.Validations.BlankValidation' | translate}}</div>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control"  placeholder="{{'CustomerModule.Placeholder.EnterLastName' | translate}}"  formControlName="LastName">
+                        <small class="text-muted">{{'AdminModule.Label.LastName' | translate}}</small>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control"  placeholder="{{'CustomerModule.Placeholder.EnterPhoneNumber' | translate}}"  formControlName="PhoneNumber">
+                        <small class="text-muted">{{'AdminModule.Label.PhoneNumber' | translate}}</small>
+                    </div>
+                    <!--<button type="button" class="btn btn-primary mt-2" (click)="saveUserProfileData()">Update</button>-->
+                </div>
+
+                <div class="col-xl-4 col-right"  >
+                    <div class="row" [formGroup]="resetForm">
+                        <div class="col">
+                            <div class="form-group has-input-icon">
+                                <input #inputTag type="password" formControlName="Password"  placeholder="{{'CoreModule.Placeholder.Password' | translate}}"  class="form-control">
+                                <i class="material-icons" (click)="togglePassword(inputTag)" style="cursor:pointer">visibility</i>                           
+                                <small class="text-muted">Password</small>
+                                <div class="form-text text-danger padding-h" *ngIf="!resetForm.get('Password').hasError('required')&& resetForm.get('Password').touched && resetForm.get('Password').hasError('passwordFormat')"><small>{{'CoreModule.Validations.PasswordFormat' | translate}}</small></div>
+                                
+                            </div>
+                        </div>
+                        <div class="col col-reset-password">
+                            <button type="button" class="btn btn-primary" [disabled]="resetForm.invalid" (click)="resetPassword()">RESET PASSWORD</button>
+                        </div>
+                    </div>
+
+                    <div class="image-upload-container">
+                        <h5 class="sub-title">Profile Image</h5>
+                        <div class="form-group upload-img-box d-flex flex-row justify-content-between rounded">
+                            <div class="picture-block border col">
+                                <img src="{{ProPic}}" class="img-fluid" alt="Profile Picture" />
+                            </div>
+                            <div class="action-block text-right col">
+                                <!--<label>Upload/Change Image</label>-->
+                                <div class="upload-btn-holder">
+                                    <div class="btn btn-primary btn-block">
+                                        <kendo-upload accept=".png,.jpg" class="kendo-upload-file updatename" id="uploadBtn" [saveUrl]="uploadSaveUrl" (success)="successEventHandler($event)">
+                                        </kendo-upload>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

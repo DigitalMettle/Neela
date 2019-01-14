@@ -1,0 +1,55 @@
+﻿{
+  "AuthenticateUser": {
+    "UserNameRequired": "Username required",
+    "PasswordRequired": "Password required",
+    "UserAuthFail": "Invalid username or password",
+    "UserAuthSuccess": "User logged in successfully",
+    "TokenGenerateSuccess": "Token successfully generated",
+    "TokenGenerateError": "Error in token generate",
+    "UnAuthorizedProject": "You are not authorized to access",
+    "UserMustHaveDomainAccount": "User must have account related to company domain"
+  },
+  "UserAccount": {
+    "PasswordResetLink": "Password reset link has been sent to your email address",
+    "UserNotExist": "Email address not found",
+    "ResetPasswordSuccessfully": "Password reset successfully",
+    "ResetPasswordNotSuccessfully": "Password not reset",
+    "InviteSuccessfullySent": "Invite successfully sent to user",
+    "InviteNotSent": "Invite not sent",
+    "UserPasswordAddedSuccessfully": "Password added Successfully",
+    "UserPasswordNotAdded": "Bad request",
+    "UserNotFound": "User not found",
+    "UserProfileFoundSuccessfully": "User profile found successfully",
+    "ProjectSync": "Project Sync successfully",
+    "ProjectNotSync": "Project not sync",
+    "UserUpdatedSuccessFully": "User updated successfully.",
+    "ProfileImageUpload": "Image uploaded successfully",
+    "ProfileImageNotUpload": "Image not uploaded please try again",
+    "UserRemovedSuccessfully": "User has been removed successfully!!",
+    "LinkExpired": "Reset password link has been expired"
+  },
+  "ProjectSetting": {
+    "ProjectNotFound": "No project found",
+    "UpdateProjectSetting": "Project settings update successfully",
+    "NotUpdateProjectSetting": "Project settings not updated successfully"
+  },
+
+  "WorkItemMessage": {
+    "WorkItemNotExist": "Work item not exist",
+    "ProjectNotExist": "Project not exist",
+    "WorkItemUpdation": "Work Item Updated successfully",
+    "WorkItemNotUpdated": "Work item could not be updated ",
+    "WorkItemCreatedSuccessfully": "Work item created successfully",
+    "PleaseContactToAdministrator": "There is some problem please contact to administator"
+  },
+  "CompanySetting": {
+    "ImageUploadSuccess": "Image uploaded successfully",
+    "ImageUploadFail": "Failed to upload image",
+    "CompanyUpdateFailed": "Company settings updation failed",
+    "CompanySettingsUpdated": "Company settings updated successfully",
+    "UnableToGet": "Unable to get company data"
+
+  }
+
+
+}

@@ -1,0 +1,76 @@
+<div class="dashborad">
+    <div class="row">
+        <div class="col-md-6 mb-4">
+            <div class="projects-list-container">
+                <div class="form-group">
+                    <select class="custom-select custom-select-secondary" id="inlineFormCustomSelect" (change)="onSelected($event.target.value)" >
+                        <!--<option value="-1">{{'AdminModule.SelectYourProject' | translate}}</option>-->
+                        <option *ngFor="let project of projectList" value={{project.Id}} >{{project.Name}}</option>
+                    </select>
+                    <small class="text-muted">{{'AdminModule.Label.ProjectsList' | translate}}</small>
+                    <small class="text-muted" *ngIf="projectList?.length==0">{{'AdminModule.Label.NoProjects' | translate}}</small>
+                </div>
+            </div>
+            <p>{{projectSummary}}</p>
+        </div>
+        <div class="col-md-6">
+            <div class="card has-shadow mb-4">
+                <h5 class="card-header">TODAY'S STATUS</h5>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-12 chart" *ngIf="barChartData?.length">
+                            <canvas baseChart #baseChart1="base-chart"
+                                    [datasets]="barChartData"
+                                    [labels]="barChartLabels"
+                                    [options]="barChartOptions"
+                                    [legend]="barChartLegend"
+                                    [chartType]="barChartType"
+                                    (chartHover)="chartHovered($event)"
+                                    [colors]="barChartColors"
+                                    (chartClick)="chartClicked($event)" ></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card has-shadow mb-4">
+                <h5 class="card-header">TOTAL OPEN: STATUS</h5>
+                <div class="card-body">
+                    <div class="row" *ngIf="lineChartData1?.length">
+                        <canvas baseChart #baseChart2="base-chart"
+                                [datasets]="lineChartData1"
+                                [labels]="lineChartLabels"
+                                [options]="lineChartOptions"
+                                [colors]="lineChartColors"
+                                [legend]="lineChartLegend"
+                                [chartType]="lineChartType"
+                                (chartHover)="chartHovered($event)"
+                                (chartClick)="chartClicked($event)"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card has-shadow mb-4">
+                <h5 class="card-header">TOTAL OPEN: TYPE</h5>
+                <div class="card-body">
+                    <div class="row" *ngIf="lineChartData2?.length">
+                        <canvas baseChart #baseChart3="base-chart"
+                                [datasets]="lineChartData2"
+                                [labels]="lineChartLabels"
+                                [options]="lineChartOptions"
+                                [colors]="lineChartColors"
+                                [legend]="lineChartLegend"
+                                [chartType]="lineChartType"
+                                (chartHover)="chartHovered($event)"
+                                (chartClick)="chartClicked($event)"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

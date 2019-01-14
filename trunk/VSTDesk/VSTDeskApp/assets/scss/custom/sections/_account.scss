@@ -1,0 +1,136 @@
+﻿@import '../../custom/custom-variables';
+
+.container-account {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 1rem 0;
+
+    > .row {
+        width: 100%;
+    }
+}
+.account-theme {
+    position: relative;
+    min-height: 100vh;
+   
+    &:before {
+        /*content: "";
+        background: url('/assets/img/img-5.jpeg') no-repeat center center;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        transform: rotate(180deg);*/
+    }
+
+    &:after {
+        content: "";
+        background: rgba(0,0,0,0.6);
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+
+    .container-account {
+        position: relative;
+        z-index: 2;
+
+        h1 {
+            font-size: 2rem;
+            color: $white;
+            font-weight: normal;
+        }
+
+        p {
+            color: $white;
+        }
+
+        .btn.btn-primary {
+            border-radius: 0px;
+            letter-spacing: 1px;
+        }
+
+        .card-group {
+            border: 1px solid #bdbdbd;
+            border-radius: 5px;
+            box-shadow: 0px 0px 4px rgba(255,255,255,0.4)
+        }
+
+        .card {
+            background-color: transparent;
+            border: none;
+        }
+
+        .v-divider {
+            position: relative;
+            background: rgba(0,123,255,0.9)
+            //background: $primary;
+        }
+
+        .btn.btn-link {
+            font-weight: 600;
+            text-decoration: underline;
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+
+        .form-control {
+            background-color: transparent;
+            color: $white;
+        }
+
+        ::-webkit-input-placeholder {
+            color: $white;
+        }
+
+        ::-moz-placeholder {
+            color: $white;
+        }
+
+        :-ms-input-placeholder {
+            color: $white;
+        }
+
+        :-moz-placeholder {
+            color: $white;
+        }
+    }
+}
+
+.login-form {
+    .btn.btn-link {
+        padding: 0;
+        box-shadow: none;
+    }
+}
+
+@include media-breakpoint-down(sm) {
+    .d-md-down-none {
+        display: none !important;
+    }
+}
+
+@include media-breakpoint-down(xs) {
+    .account-theme .container-account {
+        min-width: 320px;
+        .card-group {
+            border: none;
+            box-shadow: none;
+            .card {
+                padding: 0 0 !important;
+            }
+            .card-body {
+                padding: 0 0;
+            }
+        }
+    }
+}

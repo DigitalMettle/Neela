@@ -1,0 +1,151 @@
+// Variables
+//
+// Variables should follow the `$component-state-property-size` formula for
+// consistent naming. Ex: $nav-link-disabled-color and $modal-content-box-shadow-xs.
+
+
+//
+// Color system
+//
+
+// Custom variabes
+
+$gray-bg: #F8F9FB;
+$grary-bg-extra-light: #efecec;
+$base-border-color: #eaeaea;
+$border-dark: #dedede;
+// stylelint-disable
+$white: #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #6c757d !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black:    #000 !default;
+
+$grays: () !default;
+$grays: map-merge((
+  "100": $gray-100,
+  "200": $gray-200,
+  "300": $gray-300,
+  "400": $gray-400,
+  "500": $gray-500,
+  "600": $gray-600,
+  "700": $gray-700,
+  "800": $gray-800,
+  "900": $gray-900
+), $grays);
+
+$blue: #188bc9 !default;
+//$blue:    #007bff !default;
+//$blue: #5b5bb1 !default;
+$indigo: #6610f2 !default;
+$purple:  #6f42c1 !default;
+$pink:    #e83e8c !default;
+$red:     #dc3545 !default;
+$orange:  #fd7e14 !default;
+$yellow:  #ffc107 !default;
+$green:   #90BB37 !default;
+$teal:    #20c997 !default;
+$cyan:    #17a2b8 !default;
+
+$colors: () !default;
+$colors: map-merge((
+  "blue":       $blue,
+  "indigo":     $indigo,
+  "purple":     $purple,
+  "pink":       $pink,
+  "red":        $red,
+  "orange":     $orange,
+  "yellow":     $yellow,
+  "green":      $green,
+  "teal":       $teal,
+  "cyan":       $cyan,
+  "white":      $white,
+  "gray":       $gray-600,
+  "gray-dark":  $gray-800
+), $colors);
+
+$primary:       $blue;
+$secondary:     $gray-500;
+$success:       $green !default;
+$info:          $cyan !default;
+$warning:       $yellow !default;
+$danger:        $red !default;
+$light:         $gray-100 !default;
+$dark:          $gray-800 !default;
+
+$theme-colors: () !default;
+$theme-colors: map-merge((
+  "primary":    $primary,
+  "secondary":  $secondary,
+  "success":    $success,
+  "info":       $info,
+  "warning":    $warning,
+  "danger":     $danger,
+  "light":      $light,
+  "dark":       $dark
+), $theme-colors);
+// stylelint-enable
+
+// Body
+//
+// Settings for the `<body>` element.
+
+$body-color: $gray-700;
+
+// Z-index master list
+//
+// Warning: Avoid customizing these values. They're used for a bird's eye view
+// of components dependent on the z-axis and are designed to all work together.
+
+$zindex-dropdown: 1000 !default;
+$zindex-sticky: 1020 !default;
+$zindex-fixed: 1030 !default;
+$zindex-modal-backdrop: 1040 !default;
+$zindex-modal: 1050 !default;
+$zindex-popover: 1060 !default;
+$zindex-tooltip: 1070 !default;
+
+
+// Fonts
+//
+// Font, line-height, and color for body text, headings, and more.
+$font-family-sans-serif: 'Open Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$font-size-base: 1rem !default; // Assumes the browser default, typically `16px`
+$h4-font-size: $font-size-base * 1.3;
+$h5-font-size: $font-size-base * 1.15;
+$h6-font-size: $font-size-base*.95;
+$headings-font-weight: 600;
+
+// Forms
+//$input-border-color: $base-border-color;
+$input-placeholder-color: $gray-800;
+//$input-focus-border-color: lighten($primary, 25%) !default;
+
+// Components
+//
+// Define common padding and border radius sizes and more.
+$border-radius: .25rem !default;
+
+// buttons
+$btn-border-radius: .5rem;
+
+// Custom variables for header
+/*$app-header-height: 3.7rem;
+$app-footer-height: $app-header-height;
+$side-navbar-width: 16.875rem;
+$main-menu-header-height: 3.6rem;*/
+
+$app-header-height: 6.25rem;
+$app-header-height-mob: 4rem;
+$app-footer-height: $app-header-height-mob;
+$side-navbar-width: 17.5rem;
+$main-menu-header-height: 3.6rem;
+
+$app-sub-header-height: 4rem;
+$padding-horzontal: 1.5rem;

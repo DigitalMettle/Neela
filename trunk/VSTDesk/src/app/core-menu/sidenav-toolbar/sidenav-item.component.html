@@ -1,0 +1,11 @@
+<a *ngIf="!item.hasSubItems()" [routerLink]="[item.route]" routerLinkActive="active-tab">
+    <i [ngClass]="item.icon">{{item.iconName}}</i>
+    <span class="list-title">{{ item.name }}</span>
+     <!--<i class="ion-ios-arrow-right"></i>-->
+</a>
+
+<a *ngIf="item.hasSubItems()">
+   <i></i>
+    <span class="list-title">{{ item.name }}</span>
+</a>
+

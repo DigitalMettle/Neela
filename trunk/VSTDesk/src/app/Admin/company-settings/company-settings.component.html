@@ -1,0 +1,312 @@
+﻿<!--<h1 class="h4">Company Settings</h1>-->
+<form [formGroup]="formData">
+    <div class="card has-shadow company-settings">
+        <div class="card-body">
+
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="{{'AdminModule.Placeholder.EnterAppName' | translate}}" formControlName="AppName" [ngClass]="{'is-invalid' : formData.controls['AppName'].touched && formData.controls['AppName'].invalid}">
+                        <small class="text-muted">{{'AdminModule.Label.AppName' | translate}}</small>
+                        <div class="form-text text-danger padding-h" *ngIf="formData.controls['AppName'].touched && formData.controls['AppName'].hasError('required')">
+                            <small>{{'AdminModule.Validations.AppName' | translate}}</small>
+                        </div>
+                    </div>
+                    <!--<div class="form-group">
+        <div class="form-control form-control-secondary">{{'AdminModule.Label.CompanyLogo' | translate}}</div>
+    </div>-->
+                    <div class="form-group">
+                        <div class="image-upload-container">
+                            <div class="form-control form-control-secondary">{{'AdminModule.Label.CompanyLogo' | translate}}</div>
+                                <div class="form-group upload-img-box">
+                                    <div class="picture-block border">
+                                        <img src="{{formData.get('CompanyLogo').value}}" /> <!--alt="../../../assets/img/logo_dm.png" />-->
+                                    </div>
+                                    <div class="action-block mt-4">
+                                        <div class="upload-btn-holder">
+                                            <div class="btn btn-primary">
+                                                <kendo-upload accept=".png,.jpg" class="kendo-upload-file updatename" [saveUrl]="profileImageUploadUrl" (success)="uploadLogoSuccessEventHandler($event)">
+                                                </kendo-upload>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <div class="form-group">
+                        <div class="image-upload-container">
+                            <div class="form-control form-control-secondary">
+                                {{'AdminModule.Label.HeaderLogo' | translate}}</div>
+                                <div class="form-group upload-img-box">
+                                    <div class="picture-block border">
+                                        <img src="{{formData.get('HeaderLogo').value}}" /> <!--alt="../../../assets/img/logo_dm.png" />-->
+                                    </div>
+                                    <div class="action-block mt-4">
+                                        <div class="upload-btn-holder">
+                                            <div class="btn btn-primary">
+                                                <kendo-upload accept=".png,.jpg" class="kendo-upload-file updatename" [saveUrl]="headerLogoUploadUrl" (success)="uploadHeaderLogoSuccessEventHandler($event)">
+                                                </kendo-upload>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <!--<div class="form-group has-input-icon">
+                        <div class="form-control form-control-secondary">{{'AdminModule.Label.ADLoginSetup' | translate}}</div>
+                        <i class="material-icons rotate" (mouseenter)="toggleElement(adLoginSetupToolTip)" (mouseleave)="toggleElement(adLoginSetupToolTip)">error</i>
+                        <div class="custom-tooltip" #adLoginSetupToolTip hidden>
+                            AD Login Setup
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="{{'AdminModule.Placeholder.EnterAppId' | translate}}" formControlName="AppId" [ngClass]="{'is-invalid' : formData.controls['AppId'].touched && formData.controls['AppId'].invalid}">
+                        <small class="text-muted">{{'AdminModule.Label.AppId' | translate}}</small>
+                        <div class="form-text text-danger padding-h" *ngIf="formData.controls['AppId'].touched && formData.controls['AppId'].hasError('required')">
+                            <small>{{'AdminModule.Validations.AppId' | translate}}</small>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="{{'AdminModule.Placeholder.EnterAppSecretKey' | translate}}" formControlName="AppSecretKey" [ngClass]="{'is-invalid' : formData.controls['AppSecretKey'].touched && formData.controls['AppSecretKey'].invalid}">
+                        <small class="text-muted">{{'AdminModule.Label.AppSecretKey' | translate}}</small>
+                        <div class="form-text text-danger padding-h" *ngIf="formData.controls['AppSecretKey'].touched && formData.controls['AppSecretKey'].hasError('required')">
+                            <small>{{'AdminModule.Validations.AppSecretKey' | translate}}</small>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="{{'AdminModule.Placeholder.EnterPersonalAccessToken' | translate}}" formControlName="PersonalAccessToken" [ngClass]="{'is-invalid' : formData.controls['PersonalAccessToken'].touched && formData.controls['PersonalAccessToken'].invalid}">
+                        <small class="text-muted">{{'AdminModule.Label.PersonalAccessToken' | translate}}</small>
+                        <div class="form-text text-danger padding-h" *ngIf="formData.controls['PersonalAccessToken'].touched && formData.controls['PersonalAccessToken'].hasError('required')">
+                            <small>{{'AdminModule.Validations.PersonalAccessToken' | translate}}</small>
+                        </div>
+                    </div>-->
+                    <div class="form-group has-input-icon">
+                        <div class="form-control form-control-secondary">{{'AdminModule.Label.VSTSSettings' | translate}}</div>
+                        <i class="material-icons rotate" (mouseenter)="toggleElement(vstsSettingsToolTip)" (mouseleave)="toggleElement(vstsSettingsToolTip)">error</i>
+                        <div class="custom-tooltip" #vstsSettingsToolTip hidden>
+                            VSTS Settings
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="{{'AdminModule.Placeholder.EnterSettingOne' | translate}}" formControlName="SettingOne" [ngClass]="{'is-invalid' : formData.controls['SettingOne'].touched && formData.controls['SettingOne'].invalid}">
+                        <small class="text-muted">{{'AdminModule.Label.SettingOne' | translate}}</small>
+                        <div class="form-text text-danger padding-h" *ngIf="formData.controls['SettingOne'].touched && formData.controls['SettingOne'].hasError('required')">
+                            <small>{{'AdminModule.Validations.SettingOne' | translate}}</small>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="{{'AdminModule.Placeholder.EnterSettingTwo' | translate}}" formControlName="SettingTwo" [ngClass]="{'is-invalid' : formData.controls['SettingTwo'].touched && formData.controls['SettingTwo'].invalid}">
+                        <small class="text-muted">{{'AdminModule.Label.SettingTwo' | translate}}</small>
+                        <div class="form-text text-danger padding-h" *ngIf="formData.controls['SettingTwo'].touched && formData.controls['SettingTwo'].hasError('required')">
+                            <small>{{'AdminModule.Validations.SettingTwo' | translate}}</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                   
+                    <div class="form-group">
+                        <div class="form-control form-control-secondary">{{'AdminModule.Label.BackgroundForLoginScreen' | translate}}</div>
+                    </div>
+                    <div class="form-group">
+                        <div class="image-upload-container">
+                            
+                            <div class="form-group upload-img-box">
+                                <div class="picture-block height-lg border">
+                                    <img src="{{formData.get('BackgroundImageUrlForLogin').value}}" />
+                                </div>
+                                <div class="action-block mt-4">
+                                    <div class="upload-btn-holder">
+                                        <div class="btn btn-primary">
+                                            <kendo-upload accept=".png,.jpg" class="kendo-upload-file updatename" [saveUrl]="backgroundImageForLoginUploadUrl" (success)="loginImageSuccessEventHandler($event)">
+                                            </kendo-upload>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="email-settings">
+                <div class="form-control form-control-secondary">
+                    {{'AdminModule.Label.HTMLEmailSettings' | translate}}</div>
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="form-group has-input-icon">
+                                <div class="form-control form-control-secondary">{{'AdminModule.Label.SMTPSettings' | translate}}</div>
+                                <i class="material-icons rotate" (mouseenter)="toggleElement(smtpSettingsToolTip)" (mouseleave)="toggleElement(smtpSettingsToolTip)">error</i>
+                                <div class="custom-tooltip" #smtpSettingsToolTip hidden>
+                                    SMTP Settings
+                                </div>
+                                <!--<small class="text-muted">{{'AdminModule.Label.AppName' | translate}}</small>-->
+                            </div>
+
+                            <div class="form-group">
+                                <input class="form-control" placeholder="{{'AdminModule.Placeholder.EnterFromEmailAddress' | translate}}" type="text" formControlName="SMTPFromEmail" [ngClass]="{'is-invalid' : formData.controls['SMTPFromEmail'].touched && formData.controls['SMTPFromEmail'].invalid}">
+                                <small class="text-muted">{{'AdminModule.Label.FromEmailForFormField' | translate}}</small>
+                                <div class="form-text text-danger padding-h" *ngIf="formData.controls['SMTPFromEmail'].touched && formData.controls['SMTPFromEmail'].hasError('required')">
+                                    <small>{{'AdminModule.Validations.SMTPFromEmail' | translate}}</small>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" placeholder="{{'AdminModule.Placeholder.EnterFromName' | translate}}" type="text" formControlName="SMTPFromName" [ngClass]="{'is-invalid' : formData.controls['SMTPFromName'].touched && formData.controls['SMTPFromName'].invalid}">
+                                <small class="text-muted">{{'AdminModule.Label.FromNameForFormField' | translate}}</small>
+                                <div class="form-text text-danger padding-h" *ngIf="formData.controls['SMTPFromName'].touched && formData.controls['SMTPFromName'].hasError('required')">
+                                    <small>{{'AdminModule.Validations.SMTPFromName' | translate}}</small>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" placeholder="{{'AdminModule.Placeholder.EnterSMTPHost' | translate}}" type="text" formControlName="SMTPHostUrl" [ngClass]="{'is-invalid' : formData.controls['SMTPHostUrl'].touched && formData.controls['SMTPHostUrl'].invalid}">
+                                <small class="text-muted">{{'AdminModule.Label.SMTPHostMailServer' | translate}}</small>
+                                <div class="form-text text-danger padding-h" *ngIf="formData.controls['SMTPHostUrl'].touched && formData.controls['SMTPHostUrl'].hasError('required')">
+                                    <small>{{'AdminModule.Validations.SMTPHostUrl' | translate}}</small>
+                                </div>
+                            </div>
+                            <h6>{{'AdminModule.Label.TypeOfEncryption' | translate}} </h6>
+                            <div class="form-group form-radio-inline">
+                                <div class="form-check radio-checkbox-custom">
+                                    <label>
+                                        {{'AdminModule.Label.None' | translate}}
+                                        <input class="form-check-input" type="radio" value="None" formControlName="EncryptionType">
+                                        <span class="circle-check-mark"></span>
+                                    </label>
+                                </div>
+                                <div class="form-check radio-checkbox-custom">
+                                    <label>
+                                        {{'AdminModule.Label.SSL' | translate}}
+                                        <input class="form-check-input" type="radio" value="SSL" formControlName="EncryptionType">
+                                        <span class="circle-check-mark"></span>
+                                    </label>
+                                </div>
+                                <div class="form-check radio-checkbox-custom">
+                                    <label>
+                                        {{'AdminModule.Label.TLS' | translate}}
+                                        <input class="form-check-input" type="radio" value="TLS" formControlName="EncryptionType">
+                                        <span class="circle-check-mark"></span>
+                                    </label>
+                                </div>
+                                <small class="text-muted d-block">{{'AdminModule.Label.SSLRecommendedOption' | translate}}</small>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" placeholder="{{'AdminModule.Placeholder.EnterSMTPPort' | translate}}" type="text" formControlName="SMTPPort" [ngClass]="{'is-invalid' : formData.controls['SMTPPort'].touched && formData.controls['SMTPPort'].invalid}">
+                                <small class="text-muted">{{'AdminModule.Label.SMTPPortToMailServer' | translate}}</small>
+                                <div class="form-text text-danger padding-h" *ngIf="formData.controls['SMTPPort'].touched && formData.controls['SMTPPort'].hasError('required')">
+                                    <small>{{'AdminModule.Validations.SMTPPort' | translate}}</small>
+                                </div>
+                            </div>
+
+                            <h6>{{'AdminModule.Label.SMTPAuthentication' | translate}}</h6>
+                            <div class="form-group form-radio-inline">
+                                <div class="form-check radio-checkbox-custom">
+                                    <label>
+                                        {{'AdminModule.Label.Yes' | translate}}
+                                        <input class="form-check-input" type="radio" value="Yes" formControlName="SMTPAuthentication">
+                                        <span class="circle-check-mark"></span>
+                                    </label>
+                                </div>
+                                <div class="form-check radio-checkbox-custom">
+                                    <label>
+                                        {{'AdminModule.Label.No' | translate}}
+                                        <input class="form-check-input" type="radio" value="No" formControlName="SMTPAuthentication">
+                                        <span class="circle-check-mark"></span>
+                                    </label>
+                                </div>
+
+                                <small class="text-muted d-block">{{'AdminModule.Label.SMTPAuthentication' | translate}}</small>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" placeholder="{{'AdminModule.Placeholder.SMTPUsername' | translate}}" type="text" formControlName="SMTPUserName" [ngClass]="{'is-invalid' : formData.controls['SMTPUserName'].touched && formData.controls['SMTPUserName'].invalid}">
+                                <small class="text-muted">{{'AdminModule.Label.MailServerLoginUsername' | translate}}</small>
+                                <div class="form-text text-danger padding-h" *ngIf="formData.controls['SMTPUserName'].touched && formData.controls['SMTPUserName'].hasError('required')">
+                                    <small>{{'AdminModule.Validations.SMTPUsername' | translate}}</small>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" placeholder="{{'AdminModule.Placeholder.SMTPPassword' | translate}}" type="text" formControlName="SMTPPassword" [ngClass]="{'is-invalid' : formData.controls['SMTPPassword'].touched && formData.controls['SMTPPassword'].invalid}">
+                                <small class="text-muted d-block">{{'AdminModule.Label.MailServerLoginPassword' | translate}}</small>
+                                <div class="form-text text-danger padding-h" *ngIf="formData.controls['SMTPPassword'].touched && formData.controls['SMTPPassword'].hasError('required')">
+                                    <small>{{'AdminModule.Validations.SMTPPassword' | translate}}</small>
+                                </div>
+                            </div>
+                            <!--<div class="btn-holder">
+                <button type="button" class="btn btn-primary">{{'AdminModule.Label.SaveSmtpSettings' | translate}}</button>
+            </div>-->
+                        </div>
+                        <div class="col-lg-8 col-lg">
+                            <div class="form-group has-input-icon">
+                                <div class="form-control form-control-secondary">{{'AdminModule.Label.InvitationEmailTemplate' | translate}}</div>
+                                <i class="material-icons rotate" (mouseenter)="toggleElement(invitationEmailTemplateToolTip)" (mouseleave)="toggleElement(invitationEmailTemplateToolTip)">error</i>
+                                <div class="custom-tooltip" #invitationEmailTemplateToolTip hidden>
+                                    Invitation Email Template
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" placeholder="Enter Email Subject" type="text" formControlName="InvitationEmailSubject" [ngClass]="{'is-invalid' : formData.controls['InvitationEmailSubject'].touched && formData.controls['InvitationEmailSubject'].invalid}">
+                                <small class="text-muted">{{'AdminModule.Label.EmailSubjectLine' | translate}}</small>
+                                <div class="form-text text-danger padding-h" *ngIf="formData.controls['InvitationEmailSubject'].touched && formData.controls['InvitationEmailSubject'].hasError('required')">
+                                    <small>{{'AdminModule.Validations.InvitationEmailSubject' | translate}}</small>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="f-w-b">{{'AdminModule.Label.EmailMessage' | translate}}</label>
+                                <div class="textarea-holder">
+                                    <!--<textarea class="form-control" placeholder="WYSIWYG EDITOR" rows="8" formControlName="InvitationEmailMessage"></textarea>-->
+                                    <ckeditor [config]="editorConfig.DiscriptionConfig" formControlName="InvitationEmailMessage"></ckeditor>
+                                </div>
+                            </div>
+                            <div class="form-group has-input-icon">
+                                <div class="form-control form-control-secondary">{{'AdminModule.Label.PasswordResetEmailTemplate' | translate}}</div>
+                                <i class="material-icons rotate" (mouseenter)="toggleElement(passwordResetEmailTemplateToolTip)" (mouseleave)="toggleElement(passwordResetEmailTemplateToolTip)">error</i>
+                                <div class="custom-tooltip" #passwordResetEmailTemplateToolTip hidden>
+                                    Password Reset Email Template
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" placeholder="Enter Email Subject" type="text" formControlName="PasswordResetEmailSubject" [ngClass]="{'is-invalid' : formData.controls['PasswordResetEmailSubject'].touched && formData.controls['PasswordResetEmailSubject'].invalid}">
+                                <small class="text-muted">{{'AdminModule.Label.EmailSubjectLine' | translate}}</small>
+                                <div class="form-text text-danger padding-h" *ngIf="formData.controls['PasswordResetEmailSubject'].touched && formData.controls['PasswordResetEmailSubject'].hasError('required')">
+                                    <small>{{'AdminModule.Validations.PasswordResetEmailSubject' | translate}}</small>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="f-w-b">{{'AdminModule.Label.EmailMessage' | translate}}</label>
+                                <div class="textarea-holder">
+                                    <!--<textarea class="form-control" placeholder="WYSIWYG EDITOR" rows="8" formControlName="PasswordResetEmailMessage"></textarea>-->
+                                    <ckeditor [config]="editorConfig.DiscriptionConfig" formControlName="PasswordResetEmailMessage"></ckeditor>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            <!--<div class="form-group">
+                <label>{{'AdminModule.Label.CompanyMessage' | translate}}</label>
+                <input type="text" class="form-control" formControlName="CompanyMessage">
+            </div>
+            <div class="form-group">
+                <label>Company Logo</label>
+                <div class="upload-img-box d-flex flex-row justify-content-between rounded">
+
+                    <div class="picture-block border rounded">
+                        <img class="img-fluid" src="{{companyLogo}}" alt="Profile Picture" />
+                    </div>
+
+                    <div class="action-block text-right">
+                        <label>Upload/Change Image</label>
+                        <div class="upload-btn-holder">
+                            <div class="btn btn-dark">
+                                <kendo-upload accept=".png,.jpg" class="kendo-upload-file" [saveUrl]="uploadSaveUrl" (success)="successEventHandler($event)">
+                                </kendo-upload>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button type="button" class="btn btn-primary mt-2" (click)="saveCompanySettings()">Update</button>-->
+        </div>
+    </div>
+</form>

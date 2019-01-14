@@ -1,0 +1,20 @@
+﻿@import '../custom-variables';
+
+.tab-nav {
+    .nav-item {
+        &:not(:last-child) {
+            margin-right: 1rem;
+        }
+    }
+
+    .nav-link {
+        border-bottom: 5px solid transparent;
+        padding: 0.5rem .5rem;
+        color: $gray-800;
+        font-weight: 600;
+
+        &.active {
+            border-bottom-color: $primary;
+        }
+    }
+}

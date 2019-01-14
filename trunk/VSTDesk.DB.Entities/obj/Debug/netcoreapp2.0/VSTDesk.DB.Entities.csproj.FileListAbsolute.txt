@@ -1,0 +1,9 @@
+E:\DM Projects\Neela\trunk\VSTDesk.DB.Entities\bin\Debug\netcoreapp2.0\VSTDesk.DB.Entities.deps.json
+E:\DM Projects\Neela\trunk\VSTDesk.DB.Entities\bin\Debug\netcoreapp2.0\VSTDesk.DB.Entities.dll
+E:\DM Projects\Neela\trunk\VSTDesk.DB.Entities\bin\Debug\netcoreapp2.0\VSTDesk.DB.Entities.pdb
+E:\DM Projects\Neela\trunk\VSTDesk.DB.Entities\obj\Debug\netcoreapp2.0\VSTDesk.DB.Entities.csprojAssemblyReference.cache
+E:\DM Projects\Neela\trunk\VSTDesk.DB.Entities\obj\Debug\netcoreapp2.0\VSTDesk.DB.Entities.csproj.CoreCompileInputs.cache
+E:\DM Projects\Neela\trunk\VSTDesk.DB.Entities\obj\Debug\netcoreapp2.0\VSTDesk.DB.Entities.AssemblyInfoInputs.cache
+E:\DM Projects\Neela\trunk\VSTDesk.DB.Entities\obj\Debug\netcoreapp2.0\VSTDesk.DB.Entities.AssemblyInfo.cs
+E:\DM Projects\Neela\trunk\VSTDesk.DB.Entities\obj\Debug\netcoreapp2.0\VSTDesk.DB.Entities.dll
+E:\DM Projects\Neela\trunk\VSTDesk.DB.Entities\obj\Debug\netcoreapp2.0\VSTDesk.DB.Entities.pdb

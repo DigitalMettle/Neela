@@ -1,0 +1,86 @@
+﻿<div class="card has-shadow invite-user">
+    <div class="card-header">
+        <!-- Nav tabs -->
+        <ul class="nav tab-nav">
+            <li class="nav-item">
+                <a class="nav-link active" data-toggle="tab" href="#clientUsers">CLIENT USERS </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#adminstrators">ADMINISTRATORS</a>
+            </li>
+
+        </ul>
+    </div>
+
+
+    <div class="card-body">
+        <div class="tab-content tab-content-custom">
+            <div class="tab-pane active" id="clientUsers">
+                <form [formGroup]="formData">
+                    <div class="action mb-3 d-flex justify-content-between w-100">
+                        <button type="button" class="btn btn-primary" routerLink="/admin/userlist"> <i class="material-icons">arrow_back_ios</i> Return To USERS</button>
+                        <button type="button" [disabled]="formData.invalid" class="btn btn-primary" (click)="sendInvite()"><i class="material-icons">add</i> {{'CoreModule.Button.Invite' | translate}}</button>
+
+                    </div>
+                    <h5 class="card-sub-title">{{'CoreModule.Label.InviteUser' | translate}}</h5>
+
+                    <div class="">
+                        <div class="row align-items-start">
+                            <div class="col-md-4">
+                                <div class="form-group mb-3">
+                                    <input class="form-control" [ngClass]="{'is-invalid':formData.get('FirstName').touched && formData.get('FirstName').invalid }" type="text" placeholder="{{'CoreModule.Placeholder.FirstName' | translate}}" name="First Name" formControlName="FirstName" />
+                                    <small class="text-muted">First Name</small>
+                                    <div class="form-text text-danger w-100" *ngIf="formData.get('FirstName').touched && formData.get('FirstName').hasError('required')">First Name {{'CoreModule.Validations.Required' | translate}}</div>
+                                    <div class="form-text text-danger w-100" *ngIf="formData.get('FirstName').touched && !formData.get('FirstName').hasError('required') && formData.get('FirstName').hasError('blankValidation')">{{'CoreModule.Validations.BlankValidation' | translate}}</div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group mb-3">
+                                    <input class="form-control" [ngClass]="{'is-invalid':formData.get('LastName').touched && formData.get('LastName').invalid }" type="text" placeholder="{{'CoreModule.Placeholder.LastName' | translate}}" name="LastName" formControlName="LastName" />
+                                    <!--<div class="form-text text-danger w-100" *ngIf="formData.get('LastName').touched && formData.get('LastName').hasError('required')">Last Name {{'CoreModule.Validations.Required' | translate}}</div>-->
+                                    <small class="text-muted">
+                                        Last Name
+                                    </small>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group mb-3">
+                                    <input class="form-control" [ngClass]="{'is-invalid':formData.get('Email').touched && formData.get('Email').invalid }" type="text" placeholder="{{'CoreModule.Placeholder.Email' | translate}}" formControlName="Email" />
+                                    <small class="text-muted">Email</small>
+                                    <div class="form-text text-danger w-100" *ngIf="formData.get('Email').touched && formData.get('Email').hasError('required')">Email {{'CoreModule.Validations.Required' | translate}}</div>
+                                    <div class="form-text text-danger w-100" *ngIf="formData.get('Email').touched && !formData.get('Email').hasError('required') && formData.get('Email').hasError('emailFormat')">{{'CoreModule.Validations.EmailFormat' | translate}}</div>
+                                    <div class="form-text text-danger w-100" *ngIf="formData.get('Email').hasError('isemailexist')">{{'CoreModule.Validations.EmailExist' | translate}}</div>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                    <div formArrayName="Projects" class="row">
+                        <div class="col-lg-4 col-md-6" *ngFor="let project of ProjectList.controls; let i=index" [formGroupName]="i">
+                            <div class="form-check form-check-custom pl-0">
+                                <label>
+                                    <input class="form-check-input" type="checkbox" formControlName="IsSelected">{{formData.controls['Projects'].controls[i].value.Name | translate}}
+                                    <span class="squire-check-mark"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="form-text text-danger" *ngIf="formData.get('Projects').hasError('multipleCheckboxRequireOne')">* {{'CoreModule.Validations.Select' | translate}}</div>
+
+
+                </form>
+            </div>
+            <div class="tab-pane fade" id="adminstrators">
+
+              <admin-list></admin-list>
+
+            </div>
+        </div>
+    </div>
+
+
+</div>

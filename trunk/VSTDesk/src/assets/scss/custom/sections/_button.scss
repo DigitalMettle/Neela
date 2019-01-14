@@ -1,0 +1,29 @@
+﻿@import '../custom-variables';
+
+.btn {
+    //border-radius: .5rem;
+    box-shadow: 0 0 .5rem rgba(0,0,0,0.4);
+    text-transform: uppercase;
+    font-size: $font-size-base*.8;
+
+
+    &.btn-success {
+        color: $white;
+    }
+
+    i {
+        font-size: inherit;
+        vertical-align: middle;
+        position: relative;
+        top: -2px;
+    }
+}
+
+.upload-img-box {
+    .k-upload-button {
+        width: 100%;
+        border: none;
+    }
+}
+
+

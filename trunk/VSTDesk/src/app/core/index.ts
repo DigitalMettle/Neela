@@ -1,0 +1,7 @@
+export {LoginComponent } from './login/login.component'
+export { ForgotPassword } from './forgot-password/forgot-password.component'
+export { ResetPasswordComponent } from './reset-password/reset-password.component'
+export {CoreService} from './services/core.service'
+export {TFSTokenComponent} from './vsts-token/tfs-token'
+export { HeaderComponent } from './header/header.component'
+export { CreatePasswordComponent } from './create-password/create-password.component'

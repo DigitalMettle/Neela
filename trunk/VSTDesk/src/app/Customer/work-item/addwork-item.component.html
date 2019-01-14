@@ -1,0 +1,59 @@
+﻿<div class="row work-item">
+    <div class="col-md-offset-2 col-md-12">
+        <div class="card has-shadow">
+            <div class="card-body">
+                <div class="form-container" [formGroup]="workItemForm">
+                    <div class="action mb-3 d-flex justify-content-between w-100">
+                        <button type="button" class="btn btn-primary" routerLink="/workitemlist"> <i class="material-icons">arrow_back_ios</i> Return To Work Items</button>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4" *ngIf="!isNew">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="#{{workItemId}}" disabled />
+                                <small class="text-muted">ID</small>
+                            </div>
+                        </div>
+                        <div [ngClass]="{'col-md-8':!isNew,'col-md-12':isNew}">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="{{'CustomerModule.Placeholder.AddTitle' | translate}}" formControlName="Title" />
+                                <small class="text-muted">{{'CustomerModule.Label.Title' | translate}}</small>
+                                <div class="form-text text-danger w-100" *ngIf="workItemForm.get('Title').touched && workItemForm.get('Title').hasError('required')">{{'CustomerModule.Validations.TitleRequired' | translate}}</div>
+                                <div class="form-text text-danger w-100" *ngIf="workItemForm.get('Title').touched && !workItemForm.get('Title').hasError('required') && workItemForm.get('Title').hasError('blankValidation')">{{'CoreModule.Validations.BlankValidation' | translate}}</div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <h5 class="sub-title">{{'CustomerModule.Label.Description' | translate}}</h5>
+                        <div class="textarea-holder">
+                            <ckeditor [config]="editorConfig.ConfigSetting" formControlName="Description" [readonly]="!deatilsEditable"></ckeditor>
+                        </div>
+                    </div>
+                    <div class="form-group form-group-discussion">
+                        <h5 class="sub-title">{{'CustomerModule.Label.Discussion' | translate}}</h5>
+                        <div class="textarea-holder">
+                            <div class="mb-3">
+
+                                <ckeditor [config]="editorConfig.DiscriptionConfig" formControlName="Comment" [readonly]="!customerFeedbackEditable"></ckeditor>
+                            </div>
+                            <div class="box-holder">
+                                <div class="box" *ngFor="let item of workItemForm.controls['comments'].controls">
+                                    <strong>{{item.controls['Date'].value}}</strong>
+                                    <p class="mb-0">
+                                        <strong>USER:</strong> {{item.controls['Name'].value}}
+                                    </p>
+                                   
+                                    <strong >MESSAGE</strong>
+                                  
+                                    <div  class="form-control white-bg mt-1"  [innerHTML]= "item.controls['Text'].value"></div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

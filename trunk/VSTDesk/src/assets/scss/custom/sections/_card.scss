@@ -1,0 +1,41 @@
+﻿@import '../custom-variables';
+
+.card {
+    border-radius: .15rem;
+
+    .nav-item {
+        font-size: $font-size-base*.95;
+    }
+
+    &.card {
+        .card-header {
+            padding-top: .5rem;
+            padding-bottom: 0;
+            background-color: $gray-bg;
+            font-size: $font-size-base*1.1;
+        }
+
+        h5.card-header {
+            padding-bottom: 0.75rem;
+            padding-top: 0.75rem;
+        }
+
+        &.has-shadow {
+            box-shadow: 0.125rem 0.0625rem 0.4rem rgba(0, 0, 0, 0.2);
+        }
+
+        .card-sub-title {
+            border-bottom: 1px solid $gray-400;
+            color: $gray-800;
+            margin-bottom: 1.5rem;
+            padding-bottom: .4rem;
+        }
+    }
+
+    .sub-title {
+        border-bottom: 1px solid $gray-400;
+        color: $gray-800;
+        margin-bottom: 1.5rem;
+        padding-bottom: .4rem;
+    }
+}

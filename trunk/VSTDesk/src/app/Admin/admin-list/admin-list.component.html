@@ -1,0 +1,30 @@
+﻿<div class="user-list-conainer scroll-x">
+    <h4 class="mb-3 t-header row-custom">
+        <span class="col">
+            {{'AdminModule.Label.User' | translate}}<span class="badge badge-secondary ml-1">{{totalAdminUsers}}</span>
+        </span>
+        <span class="col">
+            Email
+        </span>
+    </h4>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item d-flex flex-row px-0 has-edit-button" *ngFor="let user of adminUserList ">
+            <div class="row-custom">
+                <div class="col">
+                    <!--<div class="user-pic" [ngStyle]="{'background-image': 'url(' + user.ProfilePhoto + ')'}"></div>-->
+
+                    <div class="text">
+                        <strong>{{user.FirstName}}</strong>
+                    </div>
+                </div>
+                <div class="col col-50">
+                    <strong>{{user.Email}}</strong>
+                </div>
+            </div>
+
+            <div class="buttons-group-holder">
+            </div>
+        </li>
+
+    </ul>
+</div>

@@ -1,0 +1,37 @@
+﻿@import '../custom-variables';
+
+.app-footer {
+    min-height: $app-footer-height;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 1rem 1.5rem;
+    color: $gray-600;
+    border-style: solid;
+    border-width: 1px 0;
+    border-color: $border-dark;
+    font-size: .9rem;
+
+    .spacer {
+        padding: 0 .3rem;
+    }
+
+    .quick-links {
+        a {
+            color: $gray-600;
+            padding: 0 5px;
+            &:hover, &:focus {
+                color: $primary;
+            }
+        }
+    }
+}
+
+@include media-breakpoint-down(xs) {
+    .app-footer {
+        justify-content: center;
+        padding: 1rem .5rem;
+    }
+}

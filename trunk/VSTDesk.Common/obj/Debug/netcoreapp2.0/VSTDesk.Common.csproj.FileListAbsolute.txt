@@ -1,0 +1,16 @@
+E:\DM Projects\Neela\trunk\VSTDesk.Common\bin\Debug\netcoreapp2.0\VSTDesk.Common.deps.json
+E:\DM Projects\Neela\trunk\VSTDesk.Common\bin\Debug\netcoreapp2.0\VSTDesk.Common.dll
+E:\DM Projects\Neela\trunk\VSTDesk.Common\bin\Debug\netcoreapp2.0\VSTDesk.Common.pdb
+E:\DM Projects\Neela\trunk\VSTDesk.Common\bin\Debug\netcoreapp2.0\Microsoft.IdentityModel.Tokens.dll
+E:\DM Projects\Neela\trunk\VSTDesk.Common\bin\Debug\netcoreapp2.0\System.IdentityModel.Tokens.Jwt.dll
+E:\DM Projects\Neela\trunk\VSTDesk.Common\bin\Debug\netcoreapp2.0\VSTDesk.DB.Entities.dll
+E:\DM Projects\Neela\trunk\VSTDesk.Common\bin\Debug\netcoreapp2.0\VSTDesk.DB.Entities.pdb
+E:\DM Projects\Neela\trunk\VSTDesk.Common\bin\Debug\netcoreapp2.0\Microsoft.IdentityModel.Tokens.xml
+E:\DM Projects\Neela\trunk\VSTDesk.Common\bin\Debug\netcoreapp2.0\System.IdentityModel.Tokens.Jwt.xml
+E:\DM Projects\Neela\trunk\VSTDesk.Common\obj\Debug\netcoreapp2.0\VSTDesk.Common.csprojAssemblyReference.cache
+E:\DM Projects\Neela\trunk\VSTDesk.Common\obj\Debug\netcoreapp2.0\VSTDesk.Common.csproj.CoreCompileInputs.cache
+E:\DM Projects\Neela\trunk\VSTDesk.Common\obj\Debug\netcoreapp2.0\VSTDesk.Common.AssemblyInfoInputs.cache
+E:\DM Projects\Neela\trunk\VSTDesk.Common\obj\Debug\netcoreapp2.0\VSTDesk.Common.AssemblyInfo.cs
+E:\DM Projects\Neela\trunk\VSTDesk.Common\obj\Debug\netcoreapp2.0\VSTDesk.Common.csproj.CopyComplete
+E:\DM Projects\Neela\trunk\VSTDesk.Common\obj\Debug\netcoreapp2.0\VSTDesk.Common.dll
+E:\DM Projects\Neela\trunk\VSTDesk.Common\obj\Debug\netcoreapp2.0\VSTDesk.Common.pdb

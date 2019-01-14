@@ -1,0 +1,59 @@
+<div class="card has-shadow">
+    <div class="card-body">
+        <form [formGroup]="searchItemForm">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div *ngIf="projects.Project.length > 1" class="form-group">
+                                <select class="custom-select custom-select-secondary white-bg" formControlName="ProjectId">
+                                    <option *ngFor="let item of projects.Project" [ngValue]="item.Id">{{item.Name}}</option>
+                                </select>
+                                <small class="text-muted">Project</small>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <select class="custom-select custom-select-secondary white-bg" formControlName="ProjectStatus">
+                                    <option value="Select">  Select State  </option>
+                                    <option *ngFor="let item of projects.projectStatus" [ngValue]="item">{{item}}</option>
+                                </select>
+                                <small class="text-muted">State</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+
+                    <div class="search-container form-container">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Search By Title" formControlName="Title" />
+                            <button type="button" class="btn"> <i class="material-icons">zoom_in</i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+
+
+        <kendo-grid [data]="gridView" [pageSize]="pageSize" [skip]="skip" [pageable]="true" [selectable]="true" (pageChange)="pageChange($event)"
+                    (selectionChange)="selectedRowChange($event)" [height]="410">
+            <kendo-grid-column field="Field.WorkItemType" title="{{'CustomerModule.Label.WorkItemType' | translate}}" width="125" *ngIf="showWorkItemType">
+            </kendo-grid-column>
+            <kendo-grid-column field="Field.Id" title="Id" width="60" *ngIf="showWorkItemId">
+            </kendo-grid-column>
+            <kendo-grid-column field="Field.Title" class="link" title="{{'CustomerModule.Label.Title' | translate}}" width="300" *ngIf="showTitle">
+            </kendo-grid-column>
+            <kendo-grid-column field="Field.State" title="{{'CustomerModule.Label.State' | translate}}" width="100" *ngIf="showState">
+            </kendo-grid-column>
+
+            <div *kendoGridDetailTemplate="let dataItem">
+                <workitem-listchild-admin *ngIf="dataItem.ChildList.length>0" [childList]="dataItem.ChildList"></workitem-listchild-admin>
+            </div>
+
+        </kendo-grid>
+    </div>
+</div>

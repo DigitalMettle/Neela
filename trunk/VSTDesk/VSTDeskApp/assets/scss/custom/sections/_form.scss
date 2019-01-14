@@ -1,0 +1,275 @@
+﻿@import '../custom-variables';
+
+$squire-check-mark-width: 1.3rem;
+$squire-check-mark-height: 1.3rem;
+$circle-check-mark-width: $squire-check-mark-width;
+$circle-check-mark-height: $squire-check-mark-height;
+
+// Custom check box
+.form-check-custom {
+    input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+    }
+
+    .squire-check-mark {
+        position: absolute;
+        top: 1px;
+        left: 0;
+        height: $squire-check-mark-height;
+        width: $squire-check-mark-width;
+        border: 1px solid $gray-300;
+
+        &:after {
+            content: "";
+            position: absolute;
+            left: 6px;
+            top: 2px;
+            width: 7px;
+            height: 12px;
+            border: solid $primary;
+            border-width: 0 2px 2px 0;
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+            visibility: hidden;
+            opacity: 0;
+            transition: all .2s linear;
+        }
+    }
+
+    &:hover input ~ .squire-check-mark {
+        border-color: $gray-400;
+    }
+
+    input:checked ~ .squire-check-mark {
+        border-color: $primary;
+    }
+
+    input:checked ~ .squire-check-mark:after {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    &.pl-0 {
+        padding-left: 0;
+    }
+
+    > label {
+        padding-left: $squire-check-mark-width + .6;
+    }
+}
+
+// Radio checkbox custom
+
+.radio-checkbox-custom {
+    padding-left: $circle-check-mark-width + .6;
+
+    input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        display: none;
+    }
+
+    .circle-check-mark {
+        position: absolute;
+        top: 2px;
+        left: 0;
+        height: $circle-check-mark-height;
+        width: $circle-check-mark-width;
+        border-radius: 50%;
+        border: 1px solid $primary;
+    }
+
+    &:hover input ~ .circle-check-mark {
+        //border-color: $gray-400;
+    }
+
+    input:checked ~ .circle-check-mark {
+    }
+
+    .circle-check-mark:after {
+        content: "";
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        width: 9px;
+        height: 9px;
+        border-radius: 50%;
+        background: $primary;
+        visibility: hidden;
+        opacity: 0;
+        transition: all .2s linear;
+    }
+
+    input:checked ~ .circle-check-mark:after {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+.form-container {
+    label {
+        //color: $gray-800;
+        font-weight: 500;
+    }
+
+    .user-pic-container {
+        width: 2.5rem;
+        min-width: 2.5rem;
+        height: 2.5rem;
+        max-height: 2.5rem;
+        border-radius: 50%;
+        border: 1px solid $base-border-color;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $gray-300;
+    }
+
+    .form-group-task {
+        font-size: $font-size-base * 1.1;
+
+        label {
+            color: $gray-900;
+        }
+
+        input {
+            font-size: $font-size-base * 1.2;
+            color: $gray-900;
+            border-color: transparent;
+
+            &:hover {
+                border-color: $base-border-color;
+            }
+        }
+    }
+}
+
+.form-group {
+    .text-muted {
+        padding: 0 .75rem;
+        color: $gray-400 !important;
+        font-size: 13px !important;
+        display: block;
+    }
+
+    &.has-input-icon {
+        position: relative;
+
+        .form-control {
+            padding-right: 2.75rem;
+        }
+        .form-control.form-control-secondary {
+            padding-right: 0;
+
+        }
+
+        .material-icons {
+            position: absolute;
+            left: auto;
+            right: 0;
+            top: .5rem;
+            color: $gray-600;
+        }
+    }
+
+    &.form-radio-inline {
+        .form-check {
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: .75rem;
+        }
+    }
+
+    .d-block {
+        display: block;
+    }
+}
+
+.col-right {
+    .form-group.has-input-icon .material-icons {
+        right: .75rem;
+    }
+}
+.form-control {
+    font-weight: 600;
+    background-color: $gray-bg;
+    font-size: $font-size-base*.95;
+    &.white-bg {
+        background-color: $white;
+    }
+
+    &.form-control:disabled {
+        background-color: #E9EAEE;
+    }
+
+    &.form-control-secondary {
+        background-color: $white;
+        border-radius: 0;
+        padding: 0.375rem 0rem;
+        border-width: 0 0 1px;
+    }
+}
+.form-control:disabled {
+    cursor: no-drop;
+}
+
+.min-width {
+    min-width: 6rem;
+}
+
+.form-group {
+    &.has-input-icon {
+        .form-control-secondary {
+            padding: 0.375rem 0.75rem;
+        }
+    }
+    label {
+        font-size: $font-size-base*.95;
+    }
+    .f-w-b {
+        font-weight: 600;
+    }
+
+    .textarea-holder {
+        padding: 0 0.75rem;
+    }
+
+    /*.cke_inner, .cke_wysiwyg_frame, .cke_wysiwyg_div {
+        background-color: $gray-bg !important;
+        background: $gray-bg !important;
+    }*/
+}
+
+.custom-select-secondary {
+    border-radius: 0;
+    border-width: 0 0 1px;
+    background-color: $gray-bg;
+    font-weight: 600;
+    background: url('/assets/img/icon_dropdown.svg') no-repeat right 0.75rem center;
+    font-size: $font-size-base*.95;
+
+    &:focus {
+        outline: 0;
+        box-shadow: none;
+    }
+
+    &.white-bg {
+        background-color: $white;
+    }
+}
+
+.form-text {
+    &.padding-h {
+        padding: 0 .75rem;
+        margin-top: 0;
+    }
+}
+
+
+
+
+

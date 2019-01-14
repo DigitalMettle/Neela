@@ -1,0 +1,50 @@
+<div class="app-main-container">
+    <nav class="app-header">
+        <div class="container-fluid">
+            <div class="header-left">
+                <div class="brand-containter">
+                    <div class="logo-secondary">
+                        <img src="{{headerLogo}}" class="img-responsive" />
+                    </div>
+                    <div class="logo"><span>{{headerAppName}}</span></div>
+                </div>
+            </div>
+            <div class="header-right">
+                <ul class="nav">
+                    <li class="nav-items-user-info">
+                        <a  href="javascript:void(0)">
+                            <span *ngIf="isShow" class="user-picture" [ngStyle]="{'background-image': 'url(' + userProfile.ProfileImageUrl + ')'}"></span>
+                            <span class="user-name hidden-xs">{{userProfile.FirstName}} {{userProfile.LastName}}</span>
+                            <i class="material-icons">expand_more</i>
+                        </a>
+                        <ul class="user-profile-dropdown">
+                            <li *ngIf="userProfile.Role!='Admin'"><a href="javascript:void(0)" (click)="navigateToProfile()"><i class="material-icons">account_circle</i>My Profile</a>
+                            <li><a (click)="logout()" href="javascript:void(0)"><i class="material-icons">power_settings_new</i> Log Out</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="app-sub-header">
+        <div class="container-fluid">
+            <div class="side-menu-toggle-button">
+                <button type="button" class="navigation" (click)="sidbarToggle()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <span>MENU</span>
+            </div>
+            <subheader class="right-block-holder" [headerData]="headerData"></subheader>
+        </div>
+    </div>
+    <app-sidenav></app-sidenav>
+    <div class="content">
+        <main class="app-main-content">
+            <router-outlet></router-outlet>
+        </main>
+        <!--<app-footer></app-footer>-->
+    </div>
+</div>

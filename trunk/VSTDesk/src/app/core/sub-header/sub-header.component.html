@@ -1,0 +1,4 @@
+﻿<div *ngIf="headerData" class="right-block">
+    <span>{{headerData.Title}}</span>
+    <button *ngFor="let button of headerData.buttons" [disabled]="button.disabled" class="btn btn-success text-uppercase" type="button" (click)="performAction(button.actionType)"><i *ngIf="button.isIcon" class="material-icons">{{button.iconText}}</i> {{button.type}}</button>
+</div>

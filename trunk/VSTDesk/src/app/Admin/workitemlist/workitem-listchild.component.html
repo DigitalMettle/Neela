@@ -1,0 +1,18 @@
+﻿<kendo-grid [data]="gridData"
+            [pageSize]="pageSize"
+            [skip]="skip"
+            [pageable]="true"
+            [selectable]="true"
+            (selectionChange)="selectedRowChange($event)"
+            (pageChange)="pageChange($event)"
+             [height]="150"
+              >
+    <kendo-grid-column field="WorkItemType" title="{{'CustomerModule.Label.WorkItemType' | translate}}" width="50" *ngIf="showWorkItemType">
+    </kendo-grid-column>
+    <kendo-grid-column field="Id" title="Id" width="50" *ngIf="showWorkItemId">
+    </kendo-grid-column>
+    <kendo-grid-column field="Title" class="link" title="{{'CustomerModule.Label.Title' | translate}}" width="290" *ngIf="showTitle">
+    </kendo-grid-column>
+    <kendo-grid-column field="State" title="{{'CustomerModule.Label.State' | translate}}" width="100" *ngIf="showState">
+    </kendo-grid-column>
+</kendo-grid>

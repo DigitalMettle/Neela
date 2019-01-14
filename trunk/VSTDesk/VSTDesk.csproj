@@ -1,0 +1,109 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+    <TypeScriptToolsVersion>2.5</TypeScriptToolsVersion>
+    <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <UserSecretsId>e0787dcc-0d36-437b-9409-139c6f38e5e0</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="**\*.ts" Exclude="$(GlobalExclude)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="src\app\Admin\admin-list\admin-list.component.ts" />
+    <Content Remove="src\app\Admin\invite-user\invite-user.component.ts" />
+    <Content Remove="src\app\Admin\models\InviteUserModel.ts" />
+    <Content Remove="src\app\Admin\project-settings\project-settings.component.ts" />
+    <Content Remove="src\app\Admin\services\admin.service.ts" />
+    <Content Remove="src\app\Admin\user-details\user-details.component.ts" />
+    <Content Remove="src\app\common\lib\login_authguard.ts" />
+    <Content Remove="src\app\common\lib\permission_authguard.ts" />
+    <Content Remove="src\app\common\lib\validations\Vaildations.ts" />
+    <Content Remove="src\app\common\utility\Userroles.ts" />
+    <Content Remove="src\app\core\reset-password\reset-password.component.ts" />
+    <Content Remove="src\app\core\services\header.sevice.ts" />
+    <Content Remove="src\app\Customer\customer.module.ts" />
+    <Content Remove="src\app\Customer\customer.route.ts" />
+    <Content Remove="src\app\Customer\dashboard\customer-dashboard.component.ts" />
+    <Content Remove="src\app\Customer\index.ts" />
+    <Content Remove="src\app\Customer\services\customer-services.ts" />
+    <Content Remove="src\app\Customer\user-profile\user-profile.component.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="src\app\Admin\about-neela\about-neela.component.ts" />
+    <None Remove="src\app\Admin\admin-list\admin-list.component.ts" />
+    <None Remove="src\app\Admin\invite-user\invite-user.component.ts" />
+    <None Remove="src\app\Admin\models\InviteUserModel.ts" />
+    <None Remove="src\app\Admin\project-settings\project-settings.component.ts" />
+    <None Remove="src\app\Admin\services\admin.service.ts" />
+    <None Remove="src\app\Admin\user-details\user-details.component.ts" />
+    <None Remove="src\app\common\lib\login_authguard.ts" />
+    <None Remove="src\app\common\lib\permission_authguard.ts" />
+    <None Remove="src\app\common\lib\validations\Vaildations.ts" />
+    <None Remove="src\app\common\utility\Userroles.ts" />
+    <None Remove="src\app\core\reset-password\reset-password.component.ts" />
+    <None Remove="src\app\core\services\header.sevice.ts" />
+    <None Remove="src\app\Customer\customer.module.ts" />
+    <None Remove="src\app\Customer\customer.route.ts" />
+    <None Remove="src\app\Customer\dashboard\customer-dashboard.component.ts" />
+    <None Remove="src\app\Customer\index.ts" />
+    <None Remove="src\app\Customer\services\customer-services.ts" />
+    <None Remove="src\app\Customer\user-profile\user-profile.component.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.5" />
+    <PackageReference Include="Microsoft.Extensions.Options" Version="2.0.1" />
+    <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="5.2.2" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="5.2.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\VSTDesk.Api\VSTDesk.Api.csproj" />
+    <ProjectReference Include="..\VSTDesk.Common\VSTDesk.Common.csproj" />
+    <ProjectReference Include="..\VSTDesk.DB.Entities\VSTDesk.DB.Entities.csproj" />
+    <ProjectReference Include="..\VSTDesk.Logic\VSTDesk.Logic.csproj" />
+    <ProjectReference Include="..\VSTDesk.Models\VSTDesk.Models.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="src\app\Admin\admin-list\admin-list.component.ts" />
+    <TypeScriptCompile Include="src\app\Admin\invite-user\invite-user.component.ts" />
+    <TypeScriptCompile Include="src\app\Admin\models\InviteUserModel.ts" />
+    <TypeScriptCompile Include="src\app\Admin\project-settings\project-settings.component.ts" />
+    <TypeScriptCompile Include="src\app\Admin\services\admin.service.ts" />
+    <TypeScriptCompile Include="src\app\Admin\user-details\user-details.component.ts" />
+    <TypeScriptCompile Include="src\app\common\lib\login_authguard.ts" />
+    <TypeScriptCompile Include="src\app\common\lib\permission_authguard.ts" />
+    <TypeScriptCompile Include="src\app\common\lib\validations\Vaildations.ts" />
+    <TypeScriptCompile Include="src\app\common\utility\userRoles.ts" />
+    <TypeScriptCompile Include="src\app\core\reset-password\reset-password.component.ts" />
+    <TypeScriptCompile Include="src\app\core\services\header.sevice.ts" />
+    <TypeScriptCompile Include="src\app\Customer\customer.module.ts" />
+    <TypeScriptCompile Include="src\app\Customer\customer.route.ts" />
+    <TypeScriptCompile Include="src\app\Customer\dashboard\customer-dashboard.component.ts" />
+    <TypeScriptCompile Include="src\app\Customer\index.ts" />
+    <TypeScriptCompile Include="src\app\Customer\services\customer-services.ts" />
+    <TypeScriptCompile Include="src\app\Customer\user-profile\user-profile.component.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="src\app\common\header\" />
+    <Folder Include="src\app\common\footer\" />
+    <Folder Include="src\app\common\directives\" />
+    <Folder Include="src\app\common\side-nav\" />
+  </ItemGroup>
+
+</Project>
