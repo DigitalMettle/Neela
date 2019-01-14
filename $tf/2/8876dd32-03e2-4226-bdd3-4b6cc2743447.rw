@@ -1,6 +1,0 @@
-﻿@import '../custom-variables';
-
-.breadcrumb {
-    background-color: transparent;
-    padding: 0 0;
-}
