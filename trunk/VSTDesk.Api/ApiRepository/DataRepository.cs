@@ -1616,13 +1616,14 @@ namespace VSTDesk.Api
                         }
 
                         foreach (var state in customStatusList)
+
                         {
                             lineChartListFirst.Add(new ChartModel()
                             {
-                                data = {dataModel.Item.Where(i => i.Fields.State == state && i.Fields.ChangedDate.Subtract(DateTime.Now).Days>21).Count(),
-                               dataModel.Item.Where(i => i.Fields.State == state  && i.Fields.ChangedDate.Subtract(DateTime.Now).Days>14 && i.Fields.ChangedDate.Subtract(DateTime.Now).Days<=21).Count(),
-                               dataModel.Item.Where(i => i.Fields.State == state  && i.Fields.ChangedDate.Subtract(DateTime.Now).Days>7 && i.Fields.ChangedDate.Subtract(DateTime.Now).Days<=14).Count(),
-                               dataModel.Item.Where(i => i.Fields.State == state  && i.Fields.ChangedDate.Subtract(DateTime.Now).Days>=0 && i.Fields.ChangedDate.Subtract(DateTime.Now).Days<=7).Count()
+                                data = {dataModel.Item.Where(i => i.Fields.State == state && DateTime.Now.Subtract(i.Fields.ChangedDate).Days>21).Count(),
+                               dataModel.Item.Where(i => i.Fields.State == state  && DateTime.Now.Subtract(i.Fields.ChangedDate).Days>14 && DateTime.Now.Subtract(i.Fields.ChangedDate).Days<=21).Count(),
+                               dataModel.Item.Where(i => i.Fields.State == state  && DateTime.Now.Subtract(i.Fields.ChangedDate).Days>7 && DateTime.Now.Subtract(i.Fields.ChangedDate).Days<=14).Count(),
+                               dataModel.Item.Where(i => i.Fields.State == state  && DateTime.Now.Subtract(i.Fields.ChangedDate).Days>=0 && DateTime.Now.Subtract(i.Fields.ChangedDate).Days<=7 ).Count()
                               },
                                 label = state
 
@@ -1633,10 +1634,10 @@ namespace VSTDesk.Api
                         {
                             lineChartListSecond.Add(new ChartModel()
                             {
-                                data ={dataModel.Item.Where(i => i.Fields.WorkItemType == workItem &&  i.Fields.ChangedDate.Subtract(DateTime.Now).Days>21).Count(),
-                               dataModel.Item.Where(i => i.Fields.WorkItemType == workItem  && i.Fields.ChangedDate.Subtract(DateTime.Now).Days>14 && i.Fields.ChangedDate.Subtract(DateTime.Now).Days<=21).Count(),
-                               dataModel.Item.Where(i => i.Fields.WorkItemType == workItem  && i.Fields.ChangedDate.Subtract(DateTime.Now).Days>7 && i.Fields.ChangedDate.Subtract(DateTime.Now).Days<=14).Count(),
-                               dataModel.Item.Where(i => i.Fields.WorkItemType == workItem  && i.Fields.ChangedDate.Subtract(DateTime.Now).Days>=0 && i.Fields.ChangedDate.Subtract(DateTime.Now).Days<=7 ).Count()
+                                data ={dataModel.Item.Where(i => i.Fields.WorkItemType == workItem &&  DateTime.Now.Subtract(i.Fields.ChangedDate).Days>21).Count(),
+                               dataModel.Item.Where(i => i.Fields.WorkItemType == workItem  && DateTime.Now.Subtract(i.Fields.ChangedDate).Days>14 && DateTime.Now.Subtract(i.Fields.ChangedDate).Days<=21).Count(),
+                               dataModel.Item.Where(i => i.Fields.WorkItemType == workItem  && DateTime.Now.Subtract(i.Fields.ChangedDate).Days>7 && DateTime.Now.Subtract(i.Fields.ChangedDate).Days<=14).Count(),
+                               dataModel.Item.Where(i => i.Fields.WorkItemType == workItem  && DateTime.Now.Subtract(i.Fields.ChangedDate).Days>=0 && DateTime.Now.Subtract(i.Fields.ChangedDate).Days<=7 ).Count()
 
                               },
                                 label = workItem

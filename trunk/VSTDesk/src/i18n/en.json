@@ -3,7 +3,7 @@
     "Login": "Login",
     "ForgotPassword": "Forgot Password",
     "UserName": "User Name",
-    
+
     "Label": {
       "Login": "Login",
       "SignIn": "Sign In to your account",
@@ -14,7 +14,9 @@
       "Reset": "Reset Password",
       "NewPassword": "Create your new password.",
       "UnableReset": "Unable to reset password.",
-      "InviteUser": "Invite User"
+      "InviteUser": "Invite User",
+      "LoginFooter": "Powered by NEELA",
+      "GitHubLink": "https://github.com/DigitalMettle/Neela"
     },
     "Placeholder": {
       "UserName": "User Name",

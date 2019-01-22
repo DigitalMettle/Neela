@@ -11,10 +11,34 @@
         width: 100%;
     }
 }
+.container-account-login {
+    min-height: 96.5vh;
+}
+.container-account-login-footer {
+    z-index: 2;
+    position: relative;
+    color: #fff;
+    background: #188bc9;
+}
+
+.container-account-login-footer p {
+    margin-bottom: 0;
+    padding: 0 1em;
+    font-size: 14px;
+}
+
+.container-account-login-footer p a {
+    text-decoration: underline;
+    color: #fff;
+}
+
+    .container-account-login-footer p a:hover {
+        cursor: pointer;
+    }
 .account-theme {
     position: relative;
     min-height: 100vh;
-   
+
     &:before {
         /*content: "";
         background: url('/assets/img/img-5.jpeg') no-repeat center center;
