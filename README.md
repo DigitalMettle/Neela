@@ -1,5 +1,5 @@
 # Neela
-Facilitates you to manage your project.
+Provides limited client visibility into Azure DevOps.
 # Prerequisites
 
 
