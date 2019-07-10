@@ -51,4 +51,108 @@ Create a pipeline between them:
 
 ![image](https://user-images.githubusercontent.com/40165674/46531476-fbdf7c80-c8ba-11e8-820b-1d071749c69a.png)
 
+#### 3) After deploying application, register your app on https://app.vsaex.visualstudio.com/app/register. by selecting scope “Work items (read and write)” and put appropriate “Authorization Callback Url”.
+
+#### 4) After registeration you will get the following keys-
+        * App secret (Client Secret)
+        * Authorize url 
+        * Access token url
+        * Select the authorize scope "vso.work_write"  
+        * App Id
+
+#### 5 ) You have to update following fields of AppSettingOauth with the keys which you got after registation in AppSettings.Production.json :
+
+"AppSettingOauth": <br/>
+{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;"AppId": "**{App Id}**",<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;"AppSecret":  "**{App Secret}**" (Client Secret),<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;"Scope": "vso.work_write",
+&nbsp;&nbsp;&nbsp;&nbsp;"CallbackUrl": "**{Your domain name}**/oauth/callback"<br/>
+}<br/>
+
+#### 5) You have to update following settings of VSTS in  AppSettings.Production.json :
+
+"VSTS":<br/> 
+{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;"AccountName": "**{your account name}**",<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;"ByPassRules": "true",<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;"UserProfileUrl": "https://app.vssps.visualstudio.com/_apis/profile/profiles/me?api-version=1.0",<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;"GroupListUrl": "https://**{your account name}**.vssps.visualstudio.com/_apis/graph/groups?api-version=4.1-preview.1",<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;"GroupMembersUrl": "https://**{your account name}**.vsaex.visualstudio.com/_apis/GroupEntitlements/{0}/members?api-version=4.1-preview.1",<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;"VSTSGroupName": "**{vsts administrator group name}**",<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;"PersonalAccessToken": "**{Personal Access Token}**",<br/>
+}
+
+#### For example: <br/>
+"VSTS":<br/> 
+{<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;"AccountName": "**xyz**",<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;"ByPassRules": "true",<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;"UserProfileUrl": "https://app.vssps.visualstudio.com/_apis/profile/profiles/me?api-version=1.0",<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;"GroupListUrl": "https://**xyz**.vssps.visualstudio.com/_apis/graph/groups?api-version=4.1-preview.1",<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;"GroupMembersUrl": "https://**xyz**.vsaex.visualstudio.com/_apis/GroupEntitlements/{0}/members?api-version=4.1-preview.1",<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;"VSTSGroupName": "**VSTDesk Administrators**",<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;"PersonalAccessToken": "**nxnayky6qr6hyic3o7zjnqnwc657hl27crq76bih6cankohnljyq**"<br/>
+}
+
+**6) For Account Name :** Your VSTS account name
+
+**7) For GroupListUrl and Group Member Url :** You need to put your account name as specified in above example
+
+**8) For VSTSGroupName :** Go to Organization section at VSTS --> Organization Settings --> Security --> Add group. Enter group name and add members. While configuring put this group name in app settings <**VSTSGroupName**> key like we have put same for {**vsts administrator group name**} at step #6.
+
+**9) For Personal Access Token :** You have to create a Personal Access Token from security section of your VSTS account and have to put same at required space in VSTS section of AppSettings.Production.json as specified in above example.
+
+**10) After generating Personal Access Token, you have to switch ON all OAuth policy from following url :** https://{**your account name**}.visualstudio.com/_admin/_policy
+
+**11) For email setting :** You have to setup SMTP Settings in System Settings view of admin section.
+
+**12)** You need to run the following script : "NeelaScript.sql"
+
+**13)** Execute following script : 
+
+    insert into WorkItemTypes values('Bug')<br/>
+    insert into WorkItemTypes values('Epic')<br/>
+    insert into WorkItemTypes values('Feature')<br/>
+    insert into WorkItemTypes values('Issue')<br/>
+    insert into WorkItemTypes values('Retrospection')<br/>
+    insert into WorkItemTypes values('Task')<br/>
+    insert into WorkItemTypes values('User Story')<br/>
+    insert into WorkItemTypes values('Test Case')<br/>
+
+**14) For database connection string :** You need to add the connection string in AppSettings.Production.json following Field
+
+"ConnectionStrings":<br/>
+{<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;"DefaultConnection": "{**Database Connection String**}"<br/>
+}
+
+**15)** After updating all keys restart your application at server.
+
+## About VSTDesk
+
+There are two modules in this application :<br/>
+    **1)** Admin Module<br/>
+    **2)** Customer Module
+
+#### 1) Admin Module: Admin module has following links -
+        
+  &nbsp;&nbsp;&nbsp;&nbsp;**1.1 DashBoard :** This link show the charts User Assigned Per Project and has a button Sync projects which will sync all VSTS project into the system.
+  **Note :** If you login first time in the system you have to press the Sync Project button before using the system.
+        
+  &nbsp;&nbsp;&nbsp;&nbsp;**1.2 Admin Project Settings :** This is the project settings from here we can customize every project so only those things will be visible to customer which we set here for the project.
+        
+  &nbsp;&nbsp;&nbsp;&nbsp;**1.3 Invite Users :** From Here user can send the invite request to the customer email address.
+        
+  &nbsp;&nbsp;&nbsp;&nbsp;**1.4 Users :** Here all users list will be visible.
+        
+  &nbsp;&nbsp;&nbsp;&nbsp;**1.4 Company Project Settings :** From Here you can set the company Logo and Message which will show on the login page.
+
+#### 2) Customer Module:  Customer module has following links -
+
+  &nbsp;&nbsp;&nbsp;&nbsp;**2.1 Dashboard :** Customer dashboard has a chart which show the number of work items and their state per project.
+  
+  &nbsp;&nbsp;&nbsp;&nbsp;**2.2 Work Items :** Show the work items per project. For here user can create a new work item and can comment for work item.
+  
+  &nbsp;&nbsp;&nbsp;&nbsp;**2.3 My Profile :** User can see their profile and can update it.
 
