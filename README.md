@@ -107,16 +107,9 @@ Create a pipeline between them:
 
 **11) For email setting :** You have to setup SMTP Settings in System Settings view of admin section.
 
-**12) For database connection string :** You need to add the connection string in AppSettings.Production.jason following Field
+**12)** You need to run the following script : "NeelaScript.sql"
 
-"ConnectionStrings":<br/>
-{<br/>
-    &nbsp;&nbsp;&nbsp;&nbsp;"DefaultConnection": "{**Database Connection String**}"<br/>
-}
-
-**12)** After updating all keys restart your application at server.
-**13)** You need to run the following script : "VSTDeskScript.sql"
-**14)** Execute following script : 
+**13)** Execute following script : 
 
     insert into WorkItemTypes values('Bug')<br/>
     insert into WorkItemTypes values('Epic')<br/>
@@ -127,6 +120,14 @@ Create a pipeline between them:
     insert into WorkItemTypes values('User Story')<br/>
     insert into WorkItemTypes values('Test Case')<br/>
 
+**14) For database connection string :** You need to add the connection string in AppSettings.Production.json following Field
+
+"ConnectionStrings":<br/>
+{<br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;"DefaultConnection": "{**Database Connection String**}"<br/>
+}
+
+**15)** After updating all keys restart your application at server.
 
 ## About VSTDesk
 
